@@ -27,7 +27,7 @@ If you already have the Supabase anon key and URL, use direct scan mode:
 
 ```bash
 python supabase-exposure-check.py \
-  --anon-key "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." \
+  --anon-key "the_anon_key" \
   --supabase-url "https://your-project.supabase.co"
 ```
 
