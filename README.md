@@ -21,7 +21,21 @@ pip install -r requirements.txt
 
 ## Usage
 
+### Direct scan with anon key (Recommended)
+
+If you already have the Supabase anon key and URL, use direct scan mode:
+
+```bash
+python supabase-exposure-check.py \
+  --anon-key "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." \
+  --supabase-url "https://your-project.supabase.co"
+```
+
+This mode skips JavaScript scanning and directly enumerates tables using the provided credentials.
+
 ### Scan a single website
+
+Automatically detect Supabase credentials from JavaScript files:
 
 ```bash
 python supabase-exposure-check.py --url https://example.com
@@ -54,9 +68,13 @@ Output is saved to the `output/` directory (by default), organized by domain, wi
 
 ## Command-line Options
 
-- `--url`: Single website URL to scan
-- `--file`, `-f`: File containing list of URLs to scan (one per line)
-- `--output`, `-o`: Output directory (default: `output`)
+| Option | Description |
+|--------|-------------|
+| `--anon-key` | Supabase anon key (JWT) for direct scan |
+| `--supabase-url` | Supabase URL for direct scan (e.g., `https://xxx.supabase.co`) |
+| `--url` | Single website URL to scan |
+| `--file`, `-f` | File containing list of URLs to scan (one per line) |
+| `--output`, `-o` | Output directory (default: `output`) |
 
 ## Example Output
 
